@@ -10,10 +10,12 @@ process.stdin.on('readable', function () {
         process.exit();
       case 'b':
         process.stdout.write("Wersja Node to: " + process.version.toString() + "\n");
-        process.exit();
+        break;
       case 'c':
-        process.stdout.write("Jezyk systemowy to: " + process.env.LC_CTYPE.toString() + "\n");
-        process.exit();
+        process.stdout.write("Jezyk systemowy to: " + process.env.SHELL.toString() + "\n");
+        break;
+      default:
+        process.stdout.write("Wybierz 'a' 'b' lub 'c'.\n");
     }
   }
 });
